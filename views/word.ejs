@@ -1,0 +1,16 @@
+<html>
+  <head><title><%= title %></title></head>
+  <body>
+    prev lookup: <%= prevlookup %>
+    <form action="/word" method="post">
+        word to look up:
+        <input type="text" name="input1"/>
+        <button type="submit"> "go" </button>
+    </form>
+    <ul>
+      <% for(var i=0; i<results.words.length; i++) {%>
+         <li><%= results.words[i] %></li>
+      <% } %>
+    </ul>
+  </body>
+</html>
