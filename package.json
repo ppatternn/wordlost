@@ -1,0 +1,22 @@
+{
+  "name": "wordlost",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ppatternn/wordlost.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ppatternn/wordlost/issues"
+  },
+  "homepage": "https://github.com/ppatternn/wordlost#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
