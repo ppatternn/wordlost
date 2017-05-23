@@ -1,16 +1,54 @@
 <html>
-  <head><title><%= title %></title></head>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" type="text/css" href="bulma.css" />
+    <link rel="stylesheet" type="text/css" href="bulma.css.map" />
+  </head>
+
   <body>
-    prev lookup: <%= prevlookup %>
-    <form action="/word" method="post">
-        word to look up:
-        <input type="text" name="input1"/>
-        <button type="submit"> "go" </button>
-    </form>
-    <ul>
+  <div id="container">
+
+  <div class="columns">
+  </div>
+
+  <div class="columns">
+
+    <div class="column is-one-quarter">
+    </div>
+
+    <div class="column is-one-quarter">
+      <form action="/word?input=" method="get">
+          <input type="text" class="input is-small" name="input_get" placeholder="what word?" />
+          <button class="is-hidden" type="submit">search</button>
+          <p><%= prevlookup %></p>
+      </form>
+    </div>
+
+
+    <div class="column is-one-quarter">
+      <form action="/word?input_get=" method="get">
+          <input type="text" class="input is-small" name="input_get" placeholder="what word?" />
+          <button class="is-hidden" type="submit">search</button>
+          <p><%= prevlookup %></p>
+      </form>
+    </div>
+
+    <div class="column is-one-quarter">
+    </div>
+
+  </div>
+
+    <div class="columns is-multiline is-mobile has-text-centered">
       <% for(var i=0; i<results.words.length; i++) {%>
-         <li><%= results.words[i] %></li>
+         <div class="column is-2">
+           <a class="button is-medium is-primary" href="/word?input_get=<%= results.words[i] %>">
+                <%= results.words[i] %>
+           </a>
+         </div>
       <% } %>
-    </ul>
+    </div>
+
+  </div>
   </body>
+
 </html>
